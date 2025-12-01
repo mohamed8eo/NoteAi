@@ -15,6 +15,20 @@
       "when": 1764525671954,
       "tag": "0001_careless_blur",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1764577969091,
+      "tag": "0002_hard_stellaris",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1764590004437,
+      "tag": "0003_striped_saracen",
+      "breakpoints": true
     }
   ]
 }

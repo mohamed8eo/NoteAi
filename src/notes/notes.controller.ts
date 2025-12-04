@@ -16,6 +16,7 @@ import { CreateNoteDto } from './dto/createNote.dto';
 import { GetUserId } from 'src/auth/get-userdecorator';
 import { UpdateNoteDto } from './dto/updateNote.dto';
 import { AiCreateNoteDto } from './dto/aiCreateNote.dto';
+import { GenerateImageDto } from './dto/generateImage.dto';
 
 @UseGuards(JwtAuthGuard)
 @Controller('notes')
@@ -73,5 +74,17 @@ export class NotesController {
   @HttpCode(HttpStatus.OK)
   async aiSummarizeNote(@Param('id') id: string, @GetUserId() userId: string) {
     return await this.noteService.aiSummarizeNote(id, userId);
+  }
+
+  @Post('ai/generate-image')
+  @HttpCode(HttpStatus.OK)
+  async generateAndUploadImage(
+    @Body() generateImageDto: GenerateImageDto,
+    @GetUserId() userId: string,
+  ) {
+    return await this.noteService.generateAndUploadImage(
+      generateImageDto.prompt,
+      userId,
+    );
   }
 }

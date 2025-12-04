@@ -1,1 +1,0 @@
-ALTER TABLE "note" ADD COLUMN "summarize" text DEFAULT '';
